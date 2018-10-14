@@ -1,10 +1,3 @@
-# Android Architecture Samples
+# Android Test Samples
 
-[RxRedux](https://github.com/freeletics/RxRedux)
-- inspired by redux
-- unidirectional dataflow
-- state focused architectural design such as Model-View-Intent(MVI)
-
-[Domic](https://github.com/lyft/domic)
-- Domic is an abstraction for Android UI layer that mirrors real Android DOM
-- Reusing Existing Android DOM
+- [simulate ViewModel.onCleared](https://github.com/satoshun-android-example/Tests/blob/master/app/src/test/java/com/github/satoshun/example/architectures/BaseViewModelTest.kt)

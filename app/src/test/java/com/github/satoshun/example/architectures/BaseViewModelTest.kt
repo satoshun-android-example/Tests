@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.get
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.github.satoshun.example.tests.lifecycle.BaseViewModel
 import com.nhaarman.mockito_kotlin.never
@@ -47,6 +48,16 @@ class BaseViewModelTest {
     verify(job, never()).cancel()
 
     activityRule.activity.viewModelStore.clear()
+
+    verify(job).cancel()
+  }
+
+  // ViewModelのライフサイクルが終わったら、Coroutineがdisposeされる
+  @Test
+  fun `dispose a coroutine when finished lifecycle of ViewModel 2`() {
+    verify(job, never()).cancel()
+
+    InstrumentationRegistry.getInstrumentation().callActivityOnDestroy(activityRule.activity)
 
     verify(job).cancel()
   }

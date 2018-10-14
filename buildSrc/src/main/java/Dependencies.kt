@@ -32,6 +32,7 @@ object Libs {
   val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
   val livedata = "androidx.lifecycle:lifecycle-livedata:2.0.0"
   val lifecycle_compiler = "androidx.lifecycle:lifecycle-compiler:2.0.0"
+  val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
 
   val emoji = "androidx.emoji:emoji:1.0.0"
   val emoji_compat = "androidx.emoji:emoji-appcompat:1.0.0"
@@ -47,8 +48,11 @@ object Libs {
   val rxbinding = "com.jakewharton.rxbinding2:rxbinding:2.2.0"
 
   val junit = "junit:junit:4.12"
-  val truth = "com.google.truth:truth:0.39"
+  val truth = "com.google.truth:truth:0.42"
+  val test_rules = "androidx.test:rules:1.1.0-beta02"
+  val test_runner = "androidx.test:runner:1.1.0-beta02"
+  val test_junit_rules = "androidx.test.ext:junit:1.0.0-beta02"
   val mockito_kotlin = "com.nhaarman:mockito-kotlin-kt1.1:1.5.0"
-  val test_runner = "androidx.test:runner:1.1.0-alpha4"
   val espresso = "androidx.test.espresso:espresso-core:3.1.0-alpha4"
+  val robolectric = "org.robolectric:robolectric:4.0-beta-1"
 }

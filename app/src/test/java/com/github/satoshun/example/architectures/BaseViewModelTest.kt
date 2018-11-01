@@ -9,8 +9,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.github.satoshun.example.tests.lifecycle.BaseViewModel
-import com.nhaarman.mockito_kotlin.never
-import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockitokotlin2.never
+import com.nhaarman.mockitokotlin2.verify
 import kotlinx.coroutines.Job
 import org.junit.Before
 import org.junit.Rule
@@ -20,7 +20,7 @@ import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
 
 @RunWith(AndroidJUnit4::class)
-class BaseViewModelTest {
+internal class BaseViewModelTest {
   @get:Rule val activityRule = ActivityTestRule(FragmentActivity::class.java)
   @get:Rule val mockitoRule = MockitoJUnit.rule()!!
 

@@ -26,20 +26,21 @@ class BaseViewModelTest {
 
   private lateinit var viewModel: BaseViewModel
 
-  @Mock private lateinit var job: Job
+  @Mock
+  private lateinit var job: Job
 
   @Suppress("UNCHECKED_CAST")
   @Before
   fun setUp() {
     viewModel = ViewModelProviders
-        .of(
-            activityRule.activity,
-            object : ViewModelProvider.Factory {
-              override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return object : BaseViewModel(job) {} as T
-              }
-            }
-        ).get()
+      .of(
+        activityRule.activity,
+        object : ViewModelProvider.Factory {
+          override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return object : BaseViewModel(job) {} as T
+          }
+        }
+      ).get()
   }
 
   // ViewModelのライフサイクルが終わったら、Coroutineがdisposeされる

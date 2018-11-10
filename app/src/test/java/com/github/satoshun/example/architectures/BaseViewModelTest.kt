@@ -26,8 +26,7 @@ internal class BaseViewModelTest {
 
   private lateinit var viewModel: BaseViewModel
 
-  @Mock
-  private lateinit var job: Job
+  @Mock private lateinit var job: Job
 
   @Suppress("UNCHECKED_CAST")
   @Before

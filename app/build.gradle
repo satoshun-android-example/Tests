@@ -35,6 +35,7 @@ dependencies {
   testImplementation Libs.test_runner
   testImplementation Libs.test_rules
   testImplementation Libs.test_junit_rules
+  testImplementation Libs.test_core
   testImplementation Libs.robolectric
   testImplementation Libs.truth
 }

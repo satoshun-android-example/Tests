@@ -52,7 +52,8 @@ object Libs {
   val test_rules = "androidx.test:rules:1.1.0"
   val test_runner = "androidx.test:runner:1.1.0"
   val test_junit_rules = "androidx.test.ext:junit:1.0.0"
+  val test_core = "androidx.test:core:1.0.0"
   val mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0"
   val espresso = "androidx.test.espresso:espresso-core:3.1.0"
-  val robolectric = "org.robolectric:robolectric:4.0"
+  val robolectric = "org.robolectric:robolectric:4.0.1"
 }

@@ -3,7 +3,7 @@ object Vers {
   val min_sdk = 26
   val target_sdk = 28
 
-  val kotlin = "1.3.0"
+  val kotlin = "1.3.10"
   val couroutine = "1.0.0"
 }
 
@@ -17,6 +17,7 @@ object Libs {
   val ui_coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Vers.couroutine}"
 
   val ktx = "androidx.core:core-ktx:1.0.0"
+  val fragmentx = "androidx.fragment:fragment-ktx:1.1.0-alpha01"
 
   val appcompat = "androidx.appcompat:appcompat:1.0.0"
   val recyclerview = "androidx.recyclerview:recyclerview:1.0.0"
@@ -25,22 +26,11 @@ object Libs {
 
   val material = "com.google.android.material:material:1.0.0"
   val coordinatorlayout = "androidx.coordinatorlayout:coordinatorlayout:1.0.0"
-  val paging = "androidx.paging:paging-runtime:2.0.0-rc01"
-  val navigation = "android.arch.navigation:navigation-fragment-ktx:1.0.0"
-  val navigation_ui = "android.arch.navigation:navigation-ui-ktx:1.0.0"
 
   val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
   val livedata = "androidx.lifecycle:lifecycle-livedata:2.0.0"
   val lifecycle_compiler = "androidx.lifecycle:lifecycle-compiler:2.0.0"
   val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
-
-  val emoji = "androidx.emoji:emoji:1.0.0"
-  val emoji_compat = "androidx.emoji:emoji-appcompat:1.0.0"
-  val emoji_bundled = "androidx.emoji:emoji-bundled:1.0.0"
-
-  val coroutine_binding = "com.github.satoshun.coroutinebinding:coroutinebinding:0.1.1"
-
-  val multidex = "com.android.support:multidex:1.0.3"
 
   val rxjava = "io.reactivex.rxjava2:rxjava:2.2.0"
   val rxandroid = "io.reactivex.rxjava2:rxandroid:2.1.0"
@@ -55,5 +45,7 @@ object Libs {
   val test_core = "androidx.test:core:1.0.0"
   val mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0"
   val espresso = "androidx.test.espresso:espresso-core:3.1.0"
-  val robolectric = "org.robolectric:robolectric:4.0.1"
+  val robolectric = "org.robolectric:robolectric:4.0.2"
+
+  val test_fragmentx = "androidx.fragment:fragment-testing:1.1.0-alpha01"
 }

@@ -1,7 +1,11 @@
 package com.github.satoshun.example.tests.lifecycle
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -21,5 +25,14 @@ class MainActivity : AppCompatActivity(),
   override fun onDestroy() {
     super.onDestroy()
     job.cancel()
+  }
+}
+
+class MainFragment : Fragment() {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?, savedInstanceState: Bundle?
+  ): View? {
+    return inflater.inflate(R.layout.main_frag, container, false)
   }
 }

@@ -17,6 +17,8 @@ object Libs {
   const val ui_coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Vers.couroutine}"
 
   const val ktx = "androidx.core:core-ktx:1.0.0"
+  const val activityx = "androidx.activity:activity-ktx:1.0.0-alpha03"
+  const val fragmentx = "androidx.fragment:fragment-ktx:1.1.0-alpha03"
 
   const val appcompat = "androidx.appcompat:appcompat:1.0.0"
   const val recyclerview = "androidx.recyclerview:recyclerview:1.0.0"
@@ -56,4 +58,5 @@ object Libs {
   const val mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0"
   const val espresso = "androidx.test.espresso:espresso-core:3.1.0"
   const val robolectric = "org.robolectric:robolectric:4.1"
+  const val test_fragmentx = "androidx.fragment:fragment-testing:1.1.0-alpha03"
 }

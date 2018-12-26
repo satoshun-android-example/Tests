@@ -27,27 +27,11 @@ object Libs {
 
   const val material = "com.google.android.material:material:1.0.0"
   const val coordinatorlayout = "androidx.coordinatorlayout:coordinatorlayout:1.0.0"
-  const val paging = "androidx.paging:paging-runtime:2.0.0-rc01"
-  const val navigation = "android.arch.navigation:navigation-fragment-ktx:1.0.0"
-  const val navigation_ui = "android.arch.navigation:navigation-ui-ktx:1.0.0"
 
   const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
   const val livedata = "androidx.lifecycle:lifecycle-livedata:2.0.0"
   const val lifecycle_compiler = "androidx.lifecycle:lifecycle-compiler:2.0.0"
   const val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
-
-  const val emoji = "androidx.emoji:emoji:1.0.0"
-  const val emoji_compat = "androidx.emoji:emoji-appcompat:1.0.0"
-  const val emoji_bundled = "androidx.emoji:emoji-bundled:1.0.0"
-
-  const val coroutine_binding = "com.github.satoshun.coroutinebinding:coroutinebinding:0.1.1"
-
-  const val multidex = "com.android.support:multidex:1.0.3"
-
-  const val rxjava = "io.reactivex.rxjava2:rxjava:2.2.0"
-  const val rxandroid = "io.reactivex.rxjava2:rxandroid:2.1.0"
-  const val rxkotlin = "io.reactivex.rxjava2:rxkotlin:2.3.0"
-  const val rxbinding = "com.jakewharton.rxbinding2:rxbinding:2.2.0"
 
   const val junit = "junit:junit:4.12"
   const val truth = "com.google.truth:truth:0.42"

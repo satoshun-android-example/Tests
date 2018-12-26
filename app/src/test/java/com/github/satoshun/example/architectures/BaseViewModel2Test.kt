@@ -25,7 +25,7 @@ internal class BaseViewModel2Test {
 
   // ViewModelのライフサイクルが終わったら、Coroutineがdisposeされる
   @Test
-  fun `dispose a coroutine when finished lifecycle of ViewModel`() {
+  fun `dispose a coroutine when finished lifecycle of ViewModel 3`() {
     verify(job, never()).cancel()
 
     val scenario = ActivityScenario.launch(FragmentActivity::class.java)

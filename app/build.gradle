@@ -38,6 +38,8 @@ dependencies {
   implementation UI_COROUTINE
   implementation FRAGMENTX
 
+  debugImplementation TEST_FRAGMENTX
+
   testImplementation JUNIT
   testImplementation MOCKITO_KOTLIN
   testImplementation TEST_RUNNER

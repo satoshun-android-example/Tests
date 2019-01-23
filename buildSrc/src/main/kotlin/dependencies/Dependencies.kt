@@ -18,6 +18,7 @@ const val UI_COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$VCOU
 const val KTX = "androidx.core:core-ktx:1.0.0"
 const val ACTIVITYX = "androidx.activity:activity-ktx:1.0.0-alpha03"
 private const val VFRAGMENTX = "1.1.0-alpha03"
+const val FRAGMENT = "androidx.fragment:fragment:$VFRAGMENTX"
 const val FRAGMENTX = "androidx.fragment:fragment-ktx:$VFRAGMENTX"
 
 const val APPCOMPAT = "androidx.appcompat:appcompat:1.0.0"

@@ -1,13 +1,15 @@
+import static dependencies.DependenciesKt.*
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-  compileSdkVersion Vers.compile_sdk
+  compileSdkVersion COMPILE_SDK
   defaultConfig {
     applicationId "com.github.satoshun.example.tests.lifecycle"
-    minSdkVersion Vers.min_sdk
-    targetSdkVersion Vers.target_sdk
+    minSdkVersion MIN_SDK
+    targetSdkVersion TARGET_SDK
     versionCode 1
     versionName "1.0"
   }
@@ -25,24 +27,25 @@ android {
 }
 
 dependencies {
-  implementation Libs.kotlin
-  implementation Libs.appcompat
-  implementation Libs.constraintlayout
+  implementation KOTLIN
+  implementation APPCOMPAT
+  implementation CONSTRAINTLAYOUT
 
-  implementation Libs.viewmodel
-  implementation Libs.lifecycle_extensions
+  implementation VIEWMODEL
+  implementation LIFECYCLE_EXTENSIONS
 
-  implementation Libs.coroutine
-  implementation Libs.ui_coroutine
-  implementation Libs.fragmentx
+  implementation COROUTINE
+  implementation UI_COROUTINE
+  implementation FRAGMENTX
 
-  testImplementation Libs.junit
-  testImplementation Libs.mockito_kotlin
-  testImplementation Libs.test_runner
-  testImplementation Libs.test_rules
-  testImplementation Libs.test_junit_rules
-  testImplementation Libs.test_core
-  testImplementation Libs.robolectric
-  testImplementation Libs.truth
-  testImplementation Libs.test_fragmentx
+  testImplementation JUNIT
+  testImplementation MOCKITO_KOTLIN
+  testImplementation TEST_RUNNER
+  testImplementation TEST_RULES
+  testImplementation TEST_JUNIT_RULES
+  testImplementation TEST_CORE
+  testImplementation ROBOLECTRIC
+  testImplementation TRUTH
+  testImplementation TEST_FRAGMENTX
 }
+

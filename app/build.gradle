@@ -41,6 +41,7 @@ dependencies {
   debugImplementation TEST_FRAGMENTX
 
   testImplementation JUNIT
+  testImplementation JUNIT_KTX
   testImplementation MOCKITO_KOTLIN
   testImplementation TEST_RUNNER
   testImplementation TEST_RULES
@@ -49,5 +50,6 @@ dependencies {
   testImplementation ROBOLECTRIC
   testImplementation TRUTH
   testImplementation TEST_FRAGMENTX
+  testImplementation TRUTHX
 }
 

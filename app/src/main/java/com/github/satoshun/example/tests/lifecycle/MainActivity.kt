@@ -1,11 +1,9 @@
 package com.github.satoshun.example.tests.lifecycle
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.main_act.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -20,19 +18,28 @@ class MainActivity : AppCompatActivity(),
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.main_act)
+
+    button.setOnClickListener {
+      startActivityForResult(
+        Intent(this, Sub2Activity::class.java),
+        1
+      )
+    }
   }
 
   override fun onDestroy() {
     super.onDestroy()
     job.cancel()
   }
-}
 
-class MainFragment : Fragment() {
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?, savedInstanceState: Bundle?
-  ): View? {
-    return inflater.inflate(R.layout.main_frag, container, false)
+  override fun onActivityResult(
+    requestCode: Int,
+    resultCode: Int,
+    data: Intent?
+  ) {
+    super.onActivityResult(requestCode, resultCode, data)
+    if (requestCode == 1) {
+      println(data!!.getIntExtra("test", -1))
+    }
   }
 }

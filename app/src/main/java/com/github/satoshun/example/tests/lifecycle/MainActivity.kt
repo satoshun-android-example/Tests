@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity(),
     super.onActivityResult(requestCode, resultCode, data)
     if (requestCode == 1) {
       if (resultCode == Activity.RESULT_OK) {
-        println(data!!.getIntExtra("test", -1))
+        val value = data!!.getIntExtra("test", -1)
+        button.text = value.toString()
       }
     }
   }

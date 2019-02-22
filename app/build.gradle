@@ -47,10 +47,11 @@ dependencies {
   testImplementation TEST_RULES
   testImplementation TEST_JUNIT_RULES
   testImplementation TEST_CORE
+  testImplementation TEST_CORE_KTX
   testImplementation ROBOLECTRIC
   testImplementation TRUTH
-  testImplementation TEST_FRAGMENTX
   testImplementation TRUTHX
+  testImplementation TEST_FRAGMENTX
   testImplementation ESPRESSO
   testImplementation ESPRESSO_INTENTS
   testImplementation ESPRESSO_CONTRIB

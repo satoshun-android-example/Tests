@@ -6,79 +6,27 @@ import android.content.ComponentName
 import android.view.View
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.matcher.IntentMatchers
 import androidx.test.espresso.intent.rule.IntentsTestRule
+import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.ext.truth.content.IntentSubject
 import com.google.common.truth.Truth.assertThat
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.robolectric.Shadows
 
 @RunWith(AndroidJUnit4::class)
 internal class MainActivityTest {
   @get:Rule val intentsTestRule = IntentsTestRule(MainActivity::class.java)
 
   @Test
-  fun startActivityTest() {
-    // call startActivityForResult and check valid requestCode
-    val scenario = ActivityScenario.launch(MainActivity::class.java)
-    scenario.onActivity {
-      // Expresso not working
-//      Espresso
-//        .onView(ViewMatchers.withId(R.id.button))
-//        .perform(ViewActions.click())
-      it.findViewById<View>(R.id.button).performClick()
-
-      // todo check request code
-      val shadowActivity = Shadows.shadowOf(it)
-//      val intent = Shadows
-//        .shadowOf(
-//          ApplicationProvider.getApplicationContext<Application>()
-//        )
-//        .nextStartedActivity
-//      val subject = IntentSubject.assertThat(intent)
-//      subject.hasComponentClass(Sub2Activity::class.java)
-
-      // check intent for startActivity(ForResult)
-      val name = ComponentName(
-        ApplicationProvider.getApplicationContext<Application>(),
-        Sub2Activity::class.java
-      )
-      Intents.intended(IntentMatchers.hasComponent(name))
-      Intents.intended(IntentMatchers.hasExtra("fuga", "hoge"))
-    }
-  }
-
-  @Test
   fun onActivityResultTest() {
-    val scenario = ActivityScenario.launch(Sub2Activity::class.java)
-    scenario.onActivity {
-      it.findViewById<View>(R.id.button).performClick()
-    }
+    val expectCode = 10
 
-    // resultCode test
-    val result = scenario.result
-    assertThat(result.resultCode).isEqualTo(1)
-
-    // intent params test
-    val bundleSubject = IntentSubject.assertThat(result.resultData).extras()
-    bundleSubject.integer("test").isEqualTo(10)
-
-//    val receive = ActivityScenario.launch(MainActivity::class.java)
-//    receive.onActivity {
-//      it.onActivityResult(
-//        1, // todo request code
-//        result.resultCode,
-//        result.resultData
-//      )
-//    }
-  }
-
-  @Test
-  fun startActivityTest2() {
     // finish test
     val scenario = ActivityScenario.launch(Sub2Activity::class.java)
     scenario.onActivity {
@@ -91,7 +39,7 @@ internal class MainActivityTest {
 
     // intent params test
     val bundleSubject = IntentSubject.assertThat(result.resultData).extras()
-    bundleSubject.integer("test").isEqualTo(10)
+    bundleSubject.integer("test").isEqualTo(expectCode)
 
     scenario.close()
 
@@ -118,7 +66,10 @@ internal class MainActivityTest {
       Intents.intended(IntentMatchers.hasComponent(name))
       Intents.intended(IntentMatchers.hasExtra("fuga", "hoge"))
 
-      // todo check onActivityResult behaves
+      // check onActivityResult behaves
+      Espresso
+        .onView(ViewMatchers.withId(R.id.button))
+        .check(ViewAssertions.matches(ViewMatchers.withText(expectCode.toString())))
     }
   }
 }

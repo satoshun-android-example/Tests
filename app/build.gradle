@@ -51,5 +51,7 @@ dependencies {
   testImplementation TRUTH
   testImplementation TEST_FRAGMENTX
   testImplementation TRUTHX
+  testImplementation ESPRESSO
+  testImplementation ESPRESSO_INTENTS
+  testImplementation ESPRESSO_CONTRIB
 }
-

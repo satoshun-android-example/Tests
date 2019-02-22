@@ -7,7 +7,7 @@ const val TARGET_SDK = 28
 private const val VKOTLIN = "1.3.21"
 private const val VCOUROUTINE = "1.1.0"
 
-const val ANDROID_PLUGIN = "com.android.tools.build:gradle:3.4.0-beta04"
+const val ANDROID_PLUGIN = "com.android.tools.build:gradle:3.5.0-alpha05"
 const val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$VKOTLIN"
 const val VERSIONS_PLUGIN = "com.github.ben-manes:gradle-versions-plugin:0.20.0"
 
@@ -43,6 +43,11 @@ const val TEST_RUNNER = "androidx.test:runner:1.1.1"
 const val TEST_JUNIT_RULES = "androidx.test.ext:junit:1.1.0"
 const val TEST_CORE = "androidx.test:core:1.1.0"
 const val MOCKITO_KOTLIN = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0"
-const val ESPRESSO = "androidx.test.espresso:espresso-core:3.1.1"
+
+private const val VESPRESSO = "3.1.1"
+const val ESPRESSO = "androidx.test.espresso:espresso-core:$VESPRESSO"
+const val ESPRESSO_INTENTS = "androidx.test.espresso:espresso-intents:$VESPRESSO"
+const val ESPRESSO_CONTRIB = "androidx.test.espresso:espresso-contrib:$VESPRESSO"
+
 const val ROBOLECTRIC = "org.robolectric:robolectric:4.2"
 const val TEST_FRAGMENTX = "androidx.fragment:fragment-testing:$VFRAGMENTX"

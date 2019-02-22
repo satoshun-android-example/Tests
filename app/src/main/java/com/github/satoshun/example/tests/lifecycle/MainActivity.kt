@@ -1,5 +1,6 @@
 package com.github.satoshun.example.tests.lifecycle
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,9 @@ class MainActivity : AppCompatActivity(),
 
     button.setOnClickListener {
       startActivityForResult(
-        Intent(this, Sub2Activity::class.java),
+        Intent(this, Sub2Activity::class.java).apply {
+          putExtra("fuga", "hoge")
+        },
         1
       )
     }
@@ -39,7 +42,9 @@ class MainActivity : AppCompatActivity(),
   ) {
     super.onActivityResult(requestCode, resultCode, data)
     if (requestCode == 1) {
-      println(data!!.getIntExtra("test", -1))
+      if (resultCode == Activity.RESULT_OK) {
+        println(data!!.getIntExtra("test", -1))
+      }
     }
   }
 }

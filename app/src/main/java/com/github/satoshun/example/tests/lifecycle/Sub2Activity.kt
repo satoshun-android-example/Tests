@@ -1,5 +1,6 @@
 package com.github.satoshun.example.tests.lifecycle
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,7 @@ class Sub2Activity : AppCompatActivity() {
     button.setOnClickListener {
       val intent = Intent()
       intent.putExtra("test", 10)
-      setResult(1, intent)
+      setResult(Activity.RESULT_OK, intent)
       finish()
     }
   }

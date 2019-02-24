@@ -27,17 +27,20 @@ internal class MainActivityTest {
   fun onActivityResultTest() {
     val expectCode = 10
 
-    // finish test
+    // assertion setResult
     val scenario = ActivityScenario.launch(Sub2Activity::class.java)
     scenario.onActivity {
+//      Espresso
+//        .onView(ViewMatchers.withId(R.id.button))
+//        .perform(click())
       it.findViewById<View>(R.id.button).performClick()
     }
 
-    // resultCode test
+    // assertion resultCode
     val result = scenario.result
     assertThat(result.resultCode).isEqualTo(Activity.RESULT_OK)
 
-    // intent params test
+    // assertion intent params
     val bundleSubject = IntentSubject.assertThat(result.resultData).extras()
     bundleSubject.integer("test").isEqualTo(expectCode)
 
@@ -58,7 +61,7 @@ internal class MainActivityTest {
     main.onActivity {
       it.findViewById<View>(R.id.button).performClick()
 
-      // check intent for startActivity(ForResult)
+      // assertion intent for startActivity(ForResult)
       val name = ComponentName(
         ApplicationProvider.getApplicationContext<Application>(),
         Sub2Activity::class.java
@@ -66,7 +69,7 @@ internal class MainActivityTest {
       Intents.intended(IntentMatchers.hasComponent(name))
       Intents.intended(IntentMatchers.hasExtra("fuga", "hoge"))
 
-      // check onActivityResult behaves
+      // assertion onActivityResult behaves
       Espresso
         .onView(ViewMatchers.withId(R.id.button))
         .check(ViewAssertions.matches(ViewMatchers.withText(expectCode.toString())))

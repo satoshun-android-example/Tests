@@ -60,4 +60,5 @@ dependencies {
   testImplementation ESPRESSO
   testImplementation ESPRESSO_INTENTS
   testImplementation ESPRESSO_CONTRIB
+  testImplementation TEST_COROUTINE
 }

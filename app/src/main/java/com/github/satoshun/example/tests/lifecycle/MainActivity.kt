@@ -5,16 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.main_act.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlin.coroutines.CoroutineContext
 
-class MainActivity : AppCompatActivity(),
-  CoroutineScope {
-
-  private val job = Job()
-  override val coroutineContext: CoroutineContext get() = job + Dispatchers.Main
+class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -28,11 +20,6 @@ class MainActivity : AppCompatActivity(),
         1
       )
     }
-  }
-
-  override fun onDestroy() {
-    super.onDestroy()
-    job.cancel()
   }
 
   override fun onActivityResult(

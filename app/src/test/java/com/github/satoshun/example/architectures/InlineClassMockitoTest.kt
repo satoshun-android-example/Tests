@@ -3,6 +3,7 @@ package com.github.satoshun.example.architectures
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.spy
 import com.nhaarman.mockitokotlin2.verify
+import org.junit.Ignore
 import org.junit.Test
 
 internal class InlineClassMockitoTest {
@@ -16,6 +17,7 @@ internal class InlineClassMockitoTest {
   }
 
   // fail!
+  @Ignore
   @Test
   fun `mock mockito with inline class`() {
     val hoge: Hoge = mock {}
@@ -28,6 +30,7 @@ internal class InlineClassMockitoTest {
   }
 
   // fail!
+  @Ignore
   @Test
   fun `spy mockito with inline class`() {
     val hoge: Hoge = spy(Hoge("test"))

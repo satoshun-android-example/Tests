@@ -20,7 +20,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-internal class MainActivityTest {
+class MainActivityTest {
   @get:Rule val intentsTestRule = IntentsTestRule(MainActivity::class.java)
 
   @Test
@@ -30,7 +30,7 @@ internal class MainActivityTest {
     // assertion setResult
     val scenario = ActivityScenario.launch(Sub2Activity::class.java)
     scenario.onActivity {
-//      Espresso
+      //      Espresso
 //        .onView(ViewMatchers.withId(R.id.button))
 //        .perform(click())
       it.findViewById<View>(R.id.button).performClick()

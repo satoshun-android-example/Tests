@@ -5,13 +5,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.testing.launchFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 
 @ExperimentalCoroutinesApi
+@RunWith(AndroidJUnit4::class)
 class MainViewModelTest {
   @get:Rule val mainCoroutineRule = MainCoroutineRule()
   @get:Rule val instantTaskExecutorRule = InstantTaskExecutorRule()

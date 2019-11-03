@@ -15,6 +15,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.ext.truth.content.IntentSubject
 import com.google.common.truth.Truth.assertThat
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,6 +24,7 @@ import org.junit.runner.RunWith
 class MainActivityTest {
   @get:Rule val intentsTestRule = IntentsTestRule(MainActivity::class.java)
 
+  @Ignore
   @Test
   fun onActivityResultTest() {
     val expectCode = 10

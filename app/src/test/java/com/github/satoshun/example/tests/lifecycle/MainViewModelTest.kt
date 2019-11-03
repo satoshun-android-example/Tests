@@ -1,17 +1,21 @@
 package com.github.satoshun.example.tests.lifecycle
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.testing.launchFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4::class)
+@ExperimentalCoroutinesApi
 class MainViewModelTest {
+  @get:Rule val mainCoroutineRule = MainCoroutineRule()
+  @get:Rule val instantTaskExecutorRule = InstantTaskExecutorRule()
+
   private lateinit var viewModel: MainViewModel
 
   @Before
@@ -23,6 +27,6 @@ class MainViewModelTest {
 
   @Test
   fun name() {
-    assertThat(viewModel.name).isEqualTo("test")
+    assertThat(viewModel.name.value).isEqualTo("test")
   }
 }

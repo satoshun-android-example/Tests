@@ -51,8 +51,8 @@ dependencies {
   testImplementation TEST_RUNNER
   testImplementation TEST_RULES
   testImplementation TEST_JUNIT_RULES
-  testImplementation TEST_CORE
   testImplementation TEST_CORE_KTX
+  testImplementation TEST_ARCH_CORE
   testImplementation ROBOLECTRIC
   testImplementation TRUTH
   testImplementation TRUTHX

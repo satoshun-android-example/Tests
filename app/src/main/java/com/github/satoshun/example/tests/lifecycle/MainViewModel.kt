@@ -6,14 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel(
+  private val repository: MainRepository
+) : ViewModel() {
 
   private val _name = MutableLiveData<String>()
   val name: LiveData<String> = _name
 
   init {
     viewModelScope.launch {
-      _name.value = "test"
+      val userName = repository.getUserName()
+      _name.value = userName
     }
   }
 }

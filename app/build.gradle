@@ -37,6 +37,7 @@ dependencies {
   implementation CONSTRAINTLAYOUT
 
   implementation VIEWMODEL
+  implementation LIVEDATA
   implementation LIFECYCLE_EXTENSIONS
 
   implementation COROUTINE
